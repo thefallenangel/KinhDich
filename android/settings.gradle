@@ -1,0 +1,3 @@
+rootProject.name = 'KinhDich'
+
+include ':app'
