@@ -7,27 +7,52 @@ import {
     ScrollView,
     Image,
     Dimensions,
+    Alert,
 } from 'react-native';
-import { AppStyle } from "./data/Style";
+import { StackNavigator } from "react-navigation";
 import { COLOR } from "react-native-material-ui";
+import { AppStyle } from "./data/Style";
+import CONSTANT from "./data/Constant";
 
+import SplashView from "./Splash";
+import DashboardView from "./Dashboard";
 
-const { width, height } = Dimensions.get("window");
+const StackMain = StackNavigator({
+    SplashView: {
+        screen: SplashView,
+        navigationOptions: {
+            gesturesEnabled: false,
+            headerStyle: { display: "none" }
+        }
+    },
+    DashboardView: {
+        screen: DashboardView,
+        navigationOptions: {
+            gesturesEnabled: false,
+            headerStyle: { display: "none" }
+        }
+    },
+});
 
 export default class MainView extends Component {
+    constructor(props, context) {
+        super(props, context);
+        this.state = {
+
+        }
+    }
+
     render() {
         return (
-            <View style={{ flex: 1 }}>
-                <View style={[AppStyle.container, {
-                    justifyContent: "center",
-                    alignItems: "center",
-                }]}>
-                    <Image
-                        style={{ width: 150, height: 150 }}
-                        source={require("../imgs/logo.jpg")}
-                    />
-                </View>
-            </View>
+            <StackMain
+                onNavigationStateChange={(prevState, newState, action) => {
+                    var current = newState.routes[newState.index];
+                    while (current.routes) {
+                        current = current.routes[current.index];
+                    }
+                    CONSTANT.CURSTATE = current.routeName;
+                }}
+            />
         );
     }
 }
