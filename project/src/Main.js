@@ -16,6 +16,7 @@ import CONSTANT from "./data/Constant";
 
 import SplashView from "./Splash";
 import DashboardView from "./Dashboard";
+import InstructionView from "./screen/Instruction";
 
 const StackMain = StackNavigator({
     SplashView: {
@@ -27,6 +28,13 @@ const StackMain = StackNavigator({
     },
     DashboardView: {
         screen: DashboardView,
+        navigationOptions: {
+            gesturesEnabled: false,
+            headerStyle: { display: "none" }
+        }
+    },
+    InstructionView: {
+        screen: InstructionView,
         navigationOptions: {
             gesturesEnabled: false,
             headerStyle: { display: "none" }

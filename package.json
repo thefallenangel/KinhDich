@@ -10,6 +10,7 @@
     "react": "16.2.0",
     "react-native": "0.53.0",
     "react-native-elements": "^0.19.1",
+    "react-native-gridview": "^0.1.2",
     "react-native-material-ui": "^1.22.3",
     "react-native-vector-icons": "^4.6.0",
     "react-navigation": "^2.0.4"
