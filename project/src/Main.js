@@ -9,7 +9,7 @@ import {
     Dimensions,
     Alert,
 } from 'react-native';
-import { StackNavigator } from "react-navigation";
+import { createStackNavigator } from "react-navigation";
 import { COLOR } from "react-native-material-ui";
 import { AppStyle } from "./data/Style";
 import CONSTANT from "./data/Constant";
@@ -17,8 +17,9 @@ import CONSTANT from "./data/Constant";
 import SplashView from "./Splash";
 import DashboardView from "./Dashboard";
 import InstructionView from "./screen/Instruction";
+import ReadingView from "./screen/Reading";
 
-const StackMain = StackNavigator({
+const StackMain = createStackNavigator({
     SplashView: {
         screen: SplashView,
         navigationOptions: {
@@ -40,14 +41,18 @@ const StackMain = StackNavigator({
             headerStyle: { display: "none" }
         }
     },
+    ReadingView: {
+        screen: ReadingView,
+        navigationOptions: {
+            gesturesEnabled: false,
+            headerStyle: { display: "none" }
+        }
+    },
 });
 
 export default class MainView extends Component {
     constructor(props, context) {
         super(props, context);
-        this.state = {
-
-        }
     }
 
     render() {

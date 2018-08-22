@@ -14,5 +14,19 @@ export const AppStyle = StyleSheet.create({
     normalText: {
         fontSize: 14,
         color: "#330000"
-    }
+    },
+    normalButton: {
+        backgroundColor: "#ff8080",
+        margin: 10,
+        width: "auto",
+        padding: 15
+    },
+    verticalWrapper: {
+        width: width,
+        flexDirection: "column"
+    },
+    horizontalWrapper: {
+        width: width,
+        flexDirection: "row"
+    },
 });

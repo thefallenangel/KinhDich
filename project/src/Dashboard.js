@@ -68,6 +68,9 @@ export default class DashboardView extends Component {
             case 3:
                 CONSTANT.Navigate("InstructionView");
                 break;
+            case 4:
+                CONSTANT.Navigate("ReadingView");
+                break;
             default:
                 break;
         }
