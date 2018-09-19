@@ -44,6 +44,11 @@ export default class DashboardView extends Component {
                     name: "Đọc thêm",
                     icon: "notebook"
                 },
+                {
+                    id: 5,
+                    name: "Chat demo",
+                    icon: "wechat"
+                },
             ],
         }
         this.onMenuPress = this.onMenuPress.bind(this);
@@ -70,6 +75,9 @@ export default class DashboardView extends Component {
                 break;
             case 4:
                 CONSTANT.Navigate("ReadingView");
+                break;
+            case 5:
+                CONSTANT.Navigate("MessengerView");
                 break;
             default:
                 break;
@@ -108,7 +116,7 @@ export default class DashboardView extends Component {
                                             marginTop: 5,
                                             marginRight: 5,
                                             alignItems: "flex-end",
-                                            display: item.id < this.state.Menu.length - 1 ? "flex" : "none"
+                                            display: item.id < this.state.Menu.length - 2 ? "flex" : "none"
                                         }}
                                         onPress={() => {
                                             this.onInstructionPress(item);

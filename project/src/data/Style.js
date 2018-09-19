@@ -13,7 +13,8 @@ export const AppStyle = StyleSheet.create({
     },
     normalText: {
         fontSize: 14,
-        color: "#330000"
+        color: "#330000",
+        padding: 5
     },
     normalButton: {
         backgroundColor: "#ff8080",

@@ -18,6 +18,7 @@ import SplashView from "./Splash";
 import DashboardView from "./Dashboard";
 import InstructionView from "./screen/Instruction";
 import ReadingView from "./screen/Reading";
+import MessengerView from "./screen/Messenger";
 
 const StackMain = createStackNavigator({
     SplashView: {
@@ -43,6 +44,13 @@ const StackMain = createStackNavigator({
     },
     ReadingView: {
         screen: ReadingView,
+        navigationOptions: {
+            gesturesEnabled: false,
+            headerStyle: { display: "none" }
+        }
+    },
+    MessengerView: {
+        screen: MessengerView,
         navigationOptions: {
             gesturesEnabled: false,
             headerStyle: { display: "none" }

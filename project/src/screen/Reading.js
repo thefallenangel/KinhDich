@@ -75,7 +75,7 @@ export default class ReadingView extends Component {
                     centerSubTitle={null}
                 />
                 <View style={[AppStyle.container]}>
-                    <View style={[AppStyle.verticalWrapper]}>
+                    <View style={[AppStyle.verticalWrapper, { display: "none" }]}>
                         <TouchableOpacity
                             style={[AppStyle.normalButton]}
                             onPress={() => {
@@ -87,7 +87,7 @@ export default class ReadingView extends Component {
                             </Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={[AppStyle.verticalWrapper]}>
+                    <View style={[AppStyle.verticalWrapper, { display: "none" }]}>
                         <TouchableOpacity
                             style={[AppStyle.normalButton, {
                                 backgroundColor: this.state.IsPlaying ? "#80ff80" : "#ff8080"
@@ -100,6 +100,42 @@ export default class ReadingView extends Component {
                                 Listen latest record
                             </Text>
                         </TouchableOpacity>
+                    </View>
+
+                    <View style={[AppStyle.horizontalWrapper]}>
+                        <TouchableOpacity
+                            style={[AppStyle.normalButton, {
+                                margin: 5,
+                                flex: 0.5,
+                                alignItems: "center"
+                            }]}
+                            onPress={() => {
+                                this.props.onIncrease(1);
+                            }}
+                        >
+                            <Text style={[AppStyle.normalText]}>
+                                Increase
+                            </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={[AppStyle.normalButton, {
+                                margin: 5,
+                                flex: 0.5,
+                                alignItems: "center"
+                            }]}
+                            onPress={() => {
+                                this.props.onDecrease(1);
+                            }}
+                        >
+                            <Text style={[AppStyle.normalText]}>
+                                Decrease
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={[AppStyle.verticalWrapper]}>
+                        <Text style={[AppStyle.normalText]}>
+                            Current number: {this.props.CurrentNumber}
+                        </Text>
                     </View>
                 </View>
             </View>
